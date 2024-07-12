@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+   <script>
+       function validate()
+       {
+           var name = document.f1.name.value;
+           var password = document.f1.password.value;
+           var email = document.f1.email.value;
+           var gender = document.f1.gender.value;
+           var mobileNumber=document.f1.mobile.value;
+           var hobbies = document.f1.hobbies.value;
+           var address = document.f1.address.value;
+           var status = false;
+           if (name.length < 1) {
+               document.getElementById("nameloc").innerHTML = "*Please enter your name";
+               status = false;
+           }
+           else 
+           {
+               status = true;
+           }
+           if (password.length < 6) {
+               document.getElementById("passwordloc").innerHTML = "*Password must be at least 6 char long";
+               status = false;
+           }
+           else {
+               status = true;
+           }
+           if((i1<1 || (i2-i1)<2))
+           {
+               document.getElementById("maildoc").innerHTML = "please enter email"
+               status = false;
+           }
+           else
+           {
+               status = true;
+           }
+           if((f.t1[0].checked==false)&&(f.t1[1].checked==false))
+           {
+               document.getElementById("genderloc").innerHTML = "please enter Gender";
+               status = false;
+           }
+           else
+           {
+               status = true;
+           }
+           if (v1 == "")
+           {
+               document.getElementById(mobilenumberloc).innerHTML = "*please enter mobile number";
+               alert("Please Fill Number:");
+               document.f.t1.focus();
+               return false;
+           }
+           if (!f.t1.value.match(v)) {
+               alert("Mobile must be 1 to 10 Integers");
+               document.f.t1.focus();
+               return false;
+           }
+           else {
+               return true;
+           }
+           if (f.c[0].checked == false && f.c[1].checked == false && f.c[2].checked == false)
+           {
+               document.getElementById(hobbiesloc).innerHTML = "*please enter hobbies";
+               alert('please check at least one hobbies');
+               return false;
+           }
+           else
+           {
+               alert("ACCEPTED")
+               return true;
+           }
+           if(address)
+           {
+               document.getElementById(addressloc).innerHTML = "*please enter address";
+               status = false;
+           }
+           else
+           {
+               status = true;
+           }
+       }
+   </script>
+</head>
+<body>
+    <form name="f1" action="#" onsubmit="return validate()">
+       <table>
+           <tr><td>Name:</td><td><input type="text" name="name" /></td>
+           <span id="nameloc"></span></tr>
+          <tr><td>Password:</td><td><input type="password" name="password" /></td>
+           <span id="passwordloc"></span></tr>
+           <tr><td>Email:</td><td><input type="email" name="email" /></td>
+               <span id="emailloc"></span></tr>
+           <tr><td>Gender:</td><td><input type="radio" name="gender" value="Male" />Male
+           <input type="radio" name="gender" value="Female" />Female</td>
+               <span id="genderloc"></span></tr>
+           <tr><td>Mobile Number:</td><td><input type="text" name="t1"/></td>
+               <span id="mobilenumberloc"></span></tr>
+           <tr><td>Hobbies</td><td><input type="checkbox" name="hobbies" value="Gaming"/>Gaming
+            <input type="checkbox" name="hobbies" value="Programming"/>Programming
+          <input type="checkbox" name="hobbies" value="Chatting"/>Chatting</td>
+           <span id="hobbiesloc"></span></tr>
+           <tr><td>Adress</td><td><input type="text" name="address"/></td>
+           <span id="adress"></span></tr>
+           <tr><td colspan="6"><input type="submit" value="register"/>
+             <input type="submit" value="reset" /></td></tr>
+       </table>
+    </form>
+</body>
+</html>
